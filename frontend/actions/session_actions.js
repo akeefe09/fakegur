@@ -3,10 +3,17 @@ import * as APIUtil from '../util/session_api_util';
 export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
 export const RECEIVE_SESSION_ERRORS = 'RECEIVE_SESSION_ERRORS';
 export const LOGOUT_USER = 'LOGOUT_USER';
+export const REMOVE_ERRORS = 'REMOVE_ERRORS';
 
 export const logoutUser = () => {
   return {
     type: LOGOUT_USER,
+  };
+};
+
+export const removeErrors = () => {
+  return {
+    type: REMOVE_ERRORS
   };
 };
 
