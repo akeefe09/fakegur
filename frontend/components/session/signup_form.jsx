@@ -30,10 +30,10 @@ class SignUpForm extends React.Component {
   }
 
 
-  handleSubmit(event) {
-    event.preventDefault();
+  handleSubmit(e) {
+    e.preventDefault();
     const user = Object.assign({}, this.state);
-    this.props.signup({ user: user });
+    this.props.processForm(user);
   }
 
   update(field) {
@@ -63,6 +63,11 @@ class SignUpForm extends React.Component {
         <div className="sign-in-img">
           <img src={window.logo} />
         </div>
+
+        <div className="sign-up-text">
+          Register with fakegur
+        </div>
+
         <div className="signup-form">
           <form onSubmit={this.handleSubmit} className="signup-form form signup">
             <br/>
@@ -90,8 +95,11 @@ class SignUpForm extends React.Component {
               <span>
                 <Link to='/login'>sign in</Link>
               </span>
+              <input type="submit" value="Next" className='submit-button right'/>
+								<div className="right signin-register-link text-shadow">
             </div>
-            <button>Next</button>
+          </div>
+
           </form>
         </div>
       </div>
