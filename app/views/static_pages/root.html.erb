@@ -4,10 +4,16 @@
   		user: current_user).html_safe %>
   <% end %>
 
-  window.images = {
-    logo: "<%= asset_path('logo.png') %>"
- }
 </script>
+
+<script>
+  window.logo ="<%= asset_path('logo.png') %>"
+</script>
+
+<script>
+  window.backTo ="<%= asset_path('backTo.png') %>"
+</script>
+
 
 
 <div id="root">should not be visible</div>
