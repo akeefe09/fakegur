@@ -1,0 +1,36 @@
+.session-container {
+  position: relative;
+  width: 350px;
+  padding-top: 80px;
+  border-radius: 5px;
+  justify-content: center;
+  align-content: center;
+  margin: auto;
+}
+
+.signup-form {
+  margin: auto;
+  background-color: #2C2F34;
+  border-radius: 5px;
+}
+
+.sign-in-img {
+  position: relative;
+  margin: 0 auto 2px;
+  
+  justify-content: center;
+  align-content: center;
+}
+
+input[type=text], input[type=password] {
+  background-color: black;
+  padding: 5px 5px;
+  width: 310px;
+  margin: 15px;
+  padding: 12px 20px;
+  display: inline-block;
+  text-align: start;
+  border-radius: 5px;
+  color: white;
+  border: 1px solid #2C2F34;
+}

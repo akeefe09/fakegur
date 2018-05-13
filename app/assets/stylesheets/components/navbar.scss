@@ -1,0 +1,33 @@
+.nav {
+  background-color: #34373c;
+  height: 50px;
+  display: flex;
+  position: relative;
+  font-size: 15px;
+}
+
+.home-link {
+  height: auto;
+  width: 83px;
+  height: 34px;
+  font-size: 30px;
+  font-family: sans-serif;
+  text-decoration: none;
+  color: white;
+}
+
+.nav-link {
+  color: white;
+  font-family: sans-serif;
+  text-decoration: none;
+}
+
+.nav-center {
+  margin: 50px;
+}
+
+.secondary-nav {
+  float: right;
+  position: relative;
+  margin-right: -15px;
+}
