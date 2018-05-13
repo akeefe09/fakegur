@@ -4,7 +4,7 @@ import Root from './components/root';
 import configureStore from './store/store';
 
 import * as SessionActions from './actions/session_actions';
-import * as PostActions from './actions/post_actions';
+
 import * as UserActions from './actions/user_actions';
 
 import { RECEIVE_CURRENT_USER } from './actions/session_actions';

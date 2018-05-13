@@ -44,14 +44,24 @@ class LoginForm extends React.Component {
 
     return (
       <div className="session">
-        <div className="logo-link">
-
+        <div className="back-to-link">
         </div>
+
+        <div className="sign-in-img">
+          <img src={window.logo} />
+        </div>
+
         <div className="background">
-
         </div>
+
+        <ul className="errors">
+          {this.renderErrors()}
+        </ul>
+
+        <div className="sign-in-text">Sign In with fakegur</div>
+
         <div className="login-form">
-          <form onSubmit={this.handleSubmit} className="login-form form login">
+          <form onSubmit={this.handleSubmit}className="login-form form login">
             <input placeholder="Username" type="text"
               value={this.state.username}
               onChange={this.update('username')} />
@@ -59,9 +69,7 @@ class LoginForm extends React.Component {
               value={this.state.password}
               onChange={this.update('password')} />
             <button>Sign In</button>
-            <ul className="errors">
-              {this.renderErrors()}
-            </ul>
+
             <div className="login-form toggle">
               <span>
                 <Link to='/'>need an account?</Link>
