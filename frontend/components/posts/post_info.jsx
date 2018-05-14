@@ -5,6 +5,7 @@ import { withRouter } from 'react-router-dom';
 import values from 'lodash/values'
 import { selectAllPosts } from '../../reducers/selectors';
 import { requestPost } from '../../actions/post_actions';
+import ImagesShow from './images_show';
 
 class PostInfo extends React.Component {
   constructor(props){
@@ -24,7 +25,7 @@ class PostInfo extends React.Component {
     let showPics = null;
     if (this.props.post.images) {
       showPics = this.props.post.images.map((image) => {
-        <
+        <ImagesShow />
       })
     }
     return(
