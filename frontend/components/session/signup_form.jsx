@@ -60,11 +60,23 @@ class SignUpForm extends React.Component {
     });
     return (
       <div className="session-container">
-        <div className="sign-in-img">
-          <img src={window.logo} />
+        <div className="back-to-link">
+          <img className="back-to-img" src={window.backTo}/>
+          <Link className="back-link" to="/">back to fakegur</Link>
         </div>
 
-        <div className="sign-up-text">
+        <div class="about-footer" >
+          <a className="about-link"
+            href="https://github.com/akeefe09/fakegur/blob/master/README.md">
+            about
+          </a>
+        </div>
+        <a href="https://fakegur.herokuapp.com/">
+          <div className="sign-in-img">
+          </div>
+        </a>
+
+        <div className="session-text">
           Register with fakegur
         </div>
 

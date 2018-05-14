@@ -43,22 +43,36 @@ class LoginForm extends React.Component {
   render() {
 
     return (
-      <div className="session">
+      <div className="session-container">
         <div className="back-to-link">
+          <img className="back-to-img" src={window.backTo}/>
+          <Link className="back-link" to="/">back to fakegur</Link>
         </div>
 
-        <div className="sign-in-img">
-          <img src={window.logo} />
+        <div class="about-footer" >
+          <a className="about-link"
+            href="https://github.com/akeefe09/fakegur/blob/master/README.md">
+            about
+          </a>
         </div>
 
-        <div className="background">
+
+        <a href="https://fakegur.herokuapp.com/">
+          <div className="sign-in-img">
+          </div>
+        </a>
+
+
+        <div className="form-background">
         </div>
 
         <ul className="errors">
           {this.renderErrors()}
         </ul>
 
-        <div className="sign-in-text">Sign In with fakegur</div>
+        <div className="session-text">
+          Sign In with fakegur
+        </div>
 
         <div className="login-form">
           <form onSubmit={this.handleSubmit}className="login-form form login">
@@ -68,7 +82,9 @@ class LoginForm extends React.Component {
             <input placeholder="Password" type="password"
               value={this.state.password}
               onChange={this.update('password')} />
-            <button>Sign In</button>
+            <div className="login-button">
+              <button>Sign In</button>
+            </div>
 
             <div className="login-form toggle">
               <span>

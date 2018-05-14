@@ -1,3 +1,33 @@
+.back-to-img {
+  width: 15px;
+}
+
+.back-link {
+  text-decoration: none;
+  opacity: .8;
+  color: #fff;
+}
+
+.about-link {
+  color: white;
+  text-decoration: none;
+  opacity: .8;
+}
+
+.about-footer {
+  z-index: 2;
+  position: fixed;
+  bottom: 30px;
+  left: 30px;
+}
+
+.back-to-link {
+  position: fixed;
+  top: 10px;
+  left: 0;
+  padding: 10px;
+}
+
 .session-container {
   position: relative;
   width: 350px;
@@ -14,12 +44,25 @@
   border-radius: 5px;
 }
 
+.session-text {
+  opacity: .8;
+  color: #fff;
+  text-align: center;
+  font-size: 11px;
+  color: #fff;
+  letter-spacing: .03em;
+  line-height: 28px;
+  text-shadow: 1px 1px 0 rgba(0,0,0,.8);
+}
+
 .sign-in-img {
   position: relative;
-  margin: 0 auto 2px;
-  
-  justify-content: center;
-  align-content: center;
+  display: block;
+  margin: 0 auto 90px;
+  width: 250px;
+  height: 75px;
+  background: url(https://i.imgur.com/F6AHOiq.png) center no-repeat;
+  background-size: contain;
 }
 
 input[type=text], input[type=password] {
