@@ -31,3 +31,16 @@
   position: relative;
   margin-right: -15px;
 }
+
+.logo-link {
+  background: url(https://i.imgur.com/F6AHOiq.png) center no-repeat;
+  width: 72px;
+  height: 46px;
+  background-size: contain;
+  margin: auto 12px;
+}
+
+.logo-link:hover {
+  background-color: black;
+  border-radius: 12px;
+}

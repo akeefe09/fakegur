@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import UserDropDown from './user_drop_down';
 
 class NavBar extends React.Component {
   constructor(props) {
@@ -9,11 +10,13 @@ class NavBar extends React.Component {
   render() {
     return (
         <div className="nav">
-
-          <div className="nav_left">
-            <Link className="home-link" to='/'>
-                fakegur
-            </Link>
+          <div className="nav-left">
+            <div className="logo-button">
+              <a href='/' className='hoverable'>
+                <div className='logo-link'>
+                </div>
+              </a>
+            </div>
           </div>
 
 

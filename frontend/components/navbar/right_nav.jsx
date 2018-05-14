@@ -36,8 +36,8 @@ const RightNav = ({ logout, user, loggedIn }) => {
     return (
       <ul className='login-options'>
 
-        <li>
-          <UserDropDown />
+        <li className="nav-link" onClick={ ()=> logout()}>
+          <Link to='/' className='login-link'>logout</Link>
         </li>
 
       </ul>
@@ -46,4 +46,4 @@ const RightNav = ({ logout, user, loggedIn }) => {
 }
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(LeftSide);
+export default connect(mapStateToProps, mapDispatchToProps)(RightNav);
