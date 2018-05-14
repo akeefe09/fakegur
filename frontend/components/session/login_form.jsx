@@ -74,25 +74,31 @@ class LoginForm extends React.Component {
           Sign In with fakegur
         </div>
 
-        <div className="login-form">
-          <form onSubmit={this.handleSubmit}className="login-form form login">
-            <input placeholder="Username" type="text"
-              value={this.state.username}
-              onChange={this.update('username')} />
-            <input placeholder="Password" type="password"
-              value={this.state.password}
-              onChange={this.update('password')} />
-            <div className="login-button">
-              <button>Sign In</button>
+        <div className="login-container">
+          <form onSubmit={this.handleSubmit} className="login-form">
+            <br/>
+            <div className="br5">
+              <input placeholder="Username" type="text"
+                value={this.state.username}
+                onChange={this.update('username')} />
+
+              <input placeholder="Password" type="password"
+                value={this.state.password}
+                onChange={this.update('password')} />
+            </div>
+            <div className="form-footer">
+              <div>
+                <Link className="need-account" to='/'>need an account?</Link>
+
+                <button className="login-button">Sign In</button>
+              </div>
             </div>
 
-            <div className="login-form toggle">
-              <span>
-                <Link to='/'>need an account?</Link>
-              </span>
-            </div>
+
           </form>
         </div>
+
+
       </div>
     );
   }

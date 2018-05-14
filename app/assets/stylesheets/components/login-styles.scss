@@ -5,7 +5,11 @@
 .back-link {
   text-decoration: none;
   opacity: .8;
-  color: #fff;
+  color: #F2F2F2;
+}
+
+.back-link:hover {
+  color: white;
 }
 
 .about-link {
@@ -28,28 +32,11 @@
   padding: 10px;
 }
 
-.session-container {
-  position: relative;
-  width: 350px;
-  padding-top: 80px;
-  border-radius: 5px;
-  justify-content: center;
-  align-content: center;
-  margin: auto;
-}
-
-.signup-form {
-  margin: auto;
-  background-color: #2C2F34;
-  border-radius: 5px;
-}
-
 .session-text {
   opacity: .8;
   color: #fff;
   text-align: center;
   font-size: 11px;
-  color: #fff;
   letter-spacing: .03em;
   line-height: 28px;
   text-shadow: 1px 1px 0 rgba(0,0,0,.8);
@@ -65,15 +52,79 @@
   background-size: contain;
 }
 
-input[type=text], input[type=password] {
-  background-color: black;
-  padding: 5px 5px;
-  width: 310px;
-  margin: 15px;
-  padding: 12px 20px;
+::selection{
+  background-color: #1bb76e;
+  color: white;
+}
+
+input[type=text], input[type=password], textarea {
+  background-color: #191919;
+  outline: 0;
+  box-sizing: border-box;
+  padding: 5px 10px;
+  font-size: .9em;
+  line-height: 1.5em;
+  resize: none;
+  margin-bottom: 10px;
+  letter-spacing: .02em;
+  color: white;
+  border-radius: 5px;
+  cursor: text;
+  text-rendering: auto;
+  border: 1px solid #2C2F34;
+  word-spacing: normal;
+  text-transform: none;
+  text-indent: 0px;
+  text-shadow: none;
+  width: 320px;
+  height: 32px;
   display: inline-block;
   text-align: start;
+}
+
+.br5 {
+  background: #2C2F34;
+  padding-top: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 8px;
   border-radius: 5px;
+}
+
+.need-account {
   color: white;
-  border: 1px solid #2C2F34;
+  text-decoration: none;
+  opacity: .8;
+}
+
+.session-container {
+  position: relative;
+  display: block;
+  margin: auto;
+  width: 350px;
+  padding-top: 80px;
+  box-sizing: border-box;
+}
+
+.login-button {
+  padding:10px 20px;
+  background: #5c69ff;
+  color: #F2F2F2;
+  font-size: 14px;
+  border:0 none;
+  border-radius: 2px;
+  padding-left: 25px;
+  padding-top: 10px;
+  padding-right: 25px;
+  padding-bottom: 10px;
+}
+
+.need-account {
+  padding-right: 15px;
+  padding-left: 130px;
+}
+
+.form-footer {
+  margin-top: 15px;
+  display: block;
 }
