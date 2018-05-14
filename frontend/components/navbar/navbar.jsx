@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import UserDropDown from './user_drop_down';
+import RightNav from 'links_right_nav';
 
 class NavBar extends React.Component {
   constructor(props) {
@@ -9,27 +9,9 @@ class NavBar extends React.Component {
 
   render() {
     return (
-        <div className="nav">
-          <div className="nav-left">
-            <div className="logo-button">
-              <a href='/' className='hoverable'>
-                <div className='logo-link'>
-                </div>
-              </a>
-            </div>
-          </div>
-
-
-
-          <div className="secondary-nav">
-            <Link className="nav-link" to='/signup' >sign up</Link>
-            <br/>
-            <Link className="nav-link" to='/login' >sign in</Link>
-            <br/>
-            <button onClick={this.props.logout}>Log Out</button>
-          </div>
-
-        </div>
+      <div className='nav-bar'>
+        
+      </div>
     );
   }
 
