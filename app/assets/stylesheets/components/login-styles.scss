@@ -32,6 +32,15 @@
   padding: 10px;
 }
 
+.signup-text {
+  opacity: .8;
+  color: #fff;
+  text-align: center;
+  font-size: 11px;
+  letter-spacing: .03em;
+  text-shadow: 1px 1px 0 rgba(0,0,0,.8);
+}
+
 .session-text {
   opacity: .8;
   color: #fff;
@@ -52,11 +61,6 @@
   background-size: contain;
 }
 
-::selection{
-  background-color: #1bb76e;
-  color: white;
-}
-
 input[type=text], input[type=password], textarea {
   background-color: #191919;
   outline: 0;
@@ -69,9 +73,8 @@ input[type=text], input[type=password], textarea {
   letter-spacing: .02em;
   color: white;
   border-radius: 5px;
-  cursor: text;
   text-rendering: auto;
-  border: 1px solid #2C2F34;
+  border: 1px solid transparent;
   word-spacing: normal;
   text-transform: none;
   text-indent: 0px;
@@ -80,6 +83,10 @@ input[type=text], input[type=password], textarea {
   height: 32px;
   display: inline-block;
   text-align: start;
+}
+
+input:focus {
+  border: 1px solid #1bb76e;
 }
 
 .br5 {
@@ -91,10 +98,20 @@ input[type=text], input[type=password], textarea {
   border-radius: 5px;
 }
 
+.sign-in-footer {
+  color: white;
+  text-decoration: none;
+  opacity: .8;
+  padding-right: 15px;
+  padding-left: 210px;
+}
+
 .need-account {
   color: white;
   text-decoration: none;
   opacity: .8;
+  padding-right: 15px;
+  padding-left: 130px;
 }
 
 .session-container {
@@ -107,7 +124,7 @@ input[type=text], input[type=password], textarea {
 }
 
 .login-button {
-  padding:10px 20px;
+  padding: 10px 20px;
   background: #5c69ff;
   color: #F2F2F2;
   font-size: 14px;
@@ -119,9 +136,8 @@ input[type=text], input[type=password], textarea {
   padding-bottom: 10px;
 }
 
-.need-account {
-  padding-right: 15px;
-  padding-left: 130px;
+.login-button:hover {
+  background: #6b77ff;
 }
 
 .form-footer {

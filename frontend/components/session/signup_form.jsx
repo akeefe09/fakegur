@@ -53,11 +53,6 @@ class SignUpForm extends React.Component {
   }
 
   render() {
-    const errors = this.props.errors.map(event => {
-      return (
-        <li>{event}</li>
-      );
-    });
     return (
       <div className="session-container">
         <div className="back-to-link">
@@ -71,44 +66,44 @@ class SignUpForm extends React.Component {
             about
           </a>
         </div>
+
         <a href="https://fakegur.herokuapp.com/">
           <div className="sign-in-img">
           </div>
         </a>
 
-        <div className="session-text">
+        <ul className="errors">
+          {this.renderErrors()}
+        </ul>
+
+        <div className="signup-text">
           Register with fakegur
         </div>
 
         <div className="signup-form">
           <form onSubmit={this.handleSubmit} className="signup-form">
             <br/>
-            <span>
+            <div className="br5">
               <input placeholder="Username" type="text"
                 value={this.state.username}
                 onChange={this.update('username')} />
-            </span>
 
-            <br/>
-            <span>
               <input placeholder="Email" type="text"
                 value={this.state.email}
                 onChange={this.update('email')} />
-            </span>
-            <br/>
-            <span>
+
               <input placeholder="Password" type="password"
                 value={this.state.password}
                 onChange={this.update('password')} />
-            </span>
+              <div className="session-text">By registering you agree to our terms of service</div>
+            </div>
 
-
-            <div className="login-form toggle">
-              <span>
-                <Link to='/login'>sign in</Link>
-              </span>
-              <input type="submit" value="Next" className='submit-button right'/>
+            <div className="form-footer">
+              <div>
+                <Link className="sign-in-footer" to='/login'>sign in</Link>
+              <input type="submit" value="Next" className='login-button'/>
 								<div className="right signin-register-link text-shadow">
+              </div>
             </div>
           </div>
 

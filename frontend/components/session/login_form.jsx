@@ -56,15 +56,10 @@ class LoginForm extends React.Component {
           </a>
         </div>
 
-
         <a href="https://fakegur.herokuapp.com/">
           <div className="sign-in-img">
           </div>
         </a>
-
-
-        <div className="form-background">
-        </div>
 
         <ul className="errors">
           {this.renderErrors()}
@@ -86,9 +81,10 @@ class LoginForm extends React.Component {
                 value={this.state.password}
                 onChange={this.update('password')} />
             </div>
+
             <div className="form-footer">
               <div>
-                <Link className="need-account" to='/'>need an account?</Link>
+                <Link className="need-account" to='/signup'>need an account?</Link>
 
                 <button className="login-button">Sign In</button>
               </div>
