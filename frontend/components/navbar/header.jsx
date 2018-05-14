@@ -3,19 +3,19 @@ import { Router, Route, Link} from 'react-router-dom';
 import indexLink from './index_link';
 import NavBar from './navbar';
 
-const TopPart = (props) => {
+const Header = (props) => {
   const location = window.location.href.split('#/')[1];
   switch (location) {
     case 'signup':
       return (
         <div>
-          {backTo()}
+
         </div>
       );
     case 'login':
       return (
         <div>
-          {backTo()}
+          
         </div>
       );
     default:
@@ -27,4 +27,4 @@ const TopPart = (props) => {
   }
 };
 
-export default TopPart;
+export default Header;
