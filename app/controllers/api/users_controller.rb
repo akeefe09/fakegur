@@ -2,6 +2,12 @@ class Api::UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    render :show
+  end
+
+  def index
+    @users = User.all
+    render :index
   end
 
   def create
@@ -16,6 +22,7 @@ class Api::UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
+    @user.profile_pic = params[:post][:image]
     if @user.save
       render :show
     else

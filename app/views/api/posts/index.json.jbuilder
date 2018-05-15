@@ -1,9 +1,15 @@
-@posts.each do |post|
-  json.set! post.id do
-    json.title post.title
-    json.id post.id
-    json.description post.description
-    json.user_id post.user.id
-    json.user_name post.user.username
+json.posts do
+  @posts.each do |post|
+    json.set! post.id do
+      json.partial 'api/posts/post', image: image
+    end
+  end
+end
+
+json.users do
+  @posts.each do |post|
+    json.set! post.user.id do
+      json.partial! 'api/users/user', user: post.user
+    end
   end
 end

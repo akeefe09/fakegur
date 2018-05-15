@@ -12,10 +12,13 @@ export const fetchImages = () => (
   });
 );
 
-// export const uploadImage = (image) => (
-//   $.ajax({
-//     method: 'POST',
-//     url: '/api/images',
-//     processData
-//   });
-// );
+export const uploadImage = (image) => (
+  $.ajax({
+    method: 'POST',
+    url: '/api/images',
+    processData: false,
+    contentType: false,
+    dataType: 'json',
+    data: image,
+  });
+);
