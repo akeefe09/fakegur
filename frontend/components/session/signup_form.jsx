@@ -60,7 +60,7 @@ class SignUpForm extends React.Component {
           <Link className="back-link" to="/">back to fakegur</Link>
         </div>
 
-        <div class="about-footer" >
+        <div className="about-footer" >
           <a className="about-link"
             href="https://github.com/akeefe09/fakegur/blob/master/README.md">
             about
@@ -95,7 +95,9 @@ class SignUpForm extends React.Component {
               <input placeholder="Password" type="password"
                 value={this.state.password}
                 onChange={this.update('password')} />
-              <div className="session-text">By registering you agree to our terms of service</div>
+              <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+                <div className="session-text">By registering you agree to our terms of service</div>
+              </a>
             </div>
 
             <div className="form-footer">

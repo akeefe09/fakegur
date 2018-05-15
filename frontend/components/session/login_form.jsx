@@ -49,7 +49,7 @@ class LoginForm extends React.Component {
           <Link className="back-link" to="/">back to fakegur</Link>
         </div>
 
-        <div class="about-footer" >
+        <div className="about-footer" >
           <a className="about-link"
             href="https://github.com/akeefe09/fakegur/blob/master/README.md">
             about

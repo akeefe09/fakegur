@@ -1,36 +1,47 @@
-.nav {
+.navbar-container{
+  width: 100%;
   background-color: #34373c;
   height: 50px;
+  z-index: 100;
+  position: relative;
+  top: 0;
+  display: inline-flex;
+  align-content: center;
+  margin: 0;
+}
+
+.navbar-container *{
+  color: white;
+}
+
+.dropdown-left {
   display: flex;
-  position: relative;
-  font-size: 15px;
 }
 
-.home-link {
-  height: auto;
-  width: 83px;
-  height: 34px;
-  font-size: 30px;
-  font-family: sans-serif;
-  text-decoration: none;
-  color: white;
+.navbar-main {
+    width: 58%;
+    background-color: #34373c;
+    font-size: 15px;
+    height: 50px;
+    z-index: 100;
+    top: 0;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
 }
 
-.nav-link {
-  color: white;
-  font-family: sans-serif;
-  text-decoration: none;
+.link-menu{
+  display: flex;
+  align-self: center;
 }
 
-.nav-center {
-  margin: 50px;
+.nav-left {
+  width: 27%;
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
 }
 
-.secondary-nav {
-  float: right;
-  position: relative;
-  margin-right: -15px;
-}
 
 .logo-link {
   background: url(https://i.imgur.com/F6AHOiq.png) center no-repeat;
@@ -40,7 +51,88 @@
   margin: auto 12px;
 }
 
-.logo-link:hover {
-  background-color: black;
+.hover-link:hover{
+  background: #50545c;
   border-radius: 12px;
+}
+
+
+.upload-button {
+  display: flex;
+  width: inherit;
+  justify-content: space-around;
+  align-self: center;
+  font-size: 14px;
+}
+.link-menu i{
+  align-self: center;
+  padding: auto 0;
+}
+
+.upload-button-container {
+  position: relative;
+    display: flex;
+    width: 160px;
+    margin: 9px 0px 9px 20px;
+    border-radius: 4px;
+    border: 1px solid #1bb76e;
+    background: #1bb76e;
+    cursor: pointer;
+    padding: 0;
+    vertical-align: baseline;
+}
+
+//
+.nav-right {
+  margin: auto 0;
+  display: inline-flex;
+  align-content: center;
+  justify-content: space-between;
+}
+.user-nav {
+  align-self: center;
+  align-content: center;
+}
+
+.nav-right ul li {
+  margin: 0;
+  list-style: none;
+    display: inline-flex;
+    user-select: none;
+    padding: 0;
+    // position: relative;
+}
+
+.navlink-btn {
+  margin: auto 20px;
+  text-decoration: none;
+}
+
+.user-nav, #global-search-container{
+
+  padding: 0 15px;
+  color: #f2f2f2;
+}
+
+.signin-link{
+  align-content: center;
+  margin: 5px 10px;
+  padding: 5px 0;
+  height: 25px;
+}
+.signin-link:hover{
+  background: #50545c;
+  border-radius: 6px;
+}
+
+#global-search-container:hover{
+  background: #50545c;
+  border-radius: 15px;
+  height: 30px;
+  padding-top: 5px;
+  margin-bottom: 5px;
+}
+
+hover-link i {
+  border-radius: 4px;
 }

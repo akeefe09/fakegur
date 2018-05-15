@@ -1,12 +1,50 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import LeftDropDown from './menu_left_dropdown_items.jsx';
+import { displayDropdown, clearDropdowns }
+  from '../../actions/dropdown_menu_actions';
 
-const LeftDropDown = ({ clearDropdowns }) => (
-  <div className="dropdown-list" onClick={(event) => event.stopPropagation()} >
-    <a href='https://github.com/akeefe09/fakegur/blob/master/README.md' target="_blank">about</a>
-    <a href='https://github.com/akeefe09' target="_blank">my github</a>
-    <a href='https://www.linkedin.com/in/alexander-keefe-785551130/' target="_blank">my linkedin</a>
-  </div>
-);
+class MenuDrop extends React.Component {
+  constructor(props){
+    super(props);
+    this.handleClick = this.handleClick.bind(this);
+  }
 
-export default LeftDropDown;
+
+  handleClick(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    this.props.displayDropdown({ leftDropDown: !this.props.visible});
+  }
+
+  render() {
+    return (
+      <span className='link-menu'>
+        <div className='info-menu-button'>
+        <div className="dropdown">
+          <i className="fa fa-chevron-circle-down dropbtn"
+            onClick={this.handleClick} aria-hidden="true"></i>
+          { this.props.visible ? <LeftDropDown clearDropdowns={clearDropdowns}/> : null }
+        </div>
+      </div>
+      </span>
+    );
+  }
+
+}
+
+
+const mapStateToProps = (state) => {
+  return {
+    visible: Boolean(state.dropdown.leftDropDown)
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    displayDropdown: (obj) => dispatch(displayDropdown(obj)),
+    clearDropdowns: () => dispatch(clearDropdowns())
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(MenuLeftDropdown);

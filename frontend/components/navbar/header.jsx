@@ -1,6 +1,5 @@
 import React from 'react';
 import { Router, Route, Link} from 'react-router-dom';
-import indexLink from './index_link';
 import NavBar from './navbar';
 
 const Header = (props) => {
@@ -15,7 +14,7 @@ const Header = (props) => {
     case 'login':
       return (
         <div>
-          
+
         </div>
       );
     default:
