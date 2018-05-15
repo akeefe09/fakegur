@@ -7,18 +7,14 @@ const Header = (props) => {
   switch (location) {
     case 'signup':
       return (
-        <div>
 
-        </div>
       );
     case 'login':
       return (
-        <div>
 
-        </div>
       );
     default:
-      return(
+      return (
         <header className='navbar-container'>
           <NavBar/>
         </header>

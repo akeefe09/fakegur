@@ -2,7 +2,6 @@
   width: 100%;
   background-color: #34373c;
   height: 50px;
-  z-index: 100;
   position: relative;
   top: 0;
   display: inline-flex;
@@ -18,16 +17,67 @@
   display: flex;
 }
 
+.navbar-link{
+  align-content: center;
+  margin: 5px 10px;
+  padding: 5px 0;
+  height: 25px;
+}
+
+.navbar-link:hover{
+  background: #50545c;
+  border-radius: 20px;
+}
+
+.logout-link {
+  align-content: center;
+  padding: 5px 0;
+  height: 25px;
+  color: white;
+  padding-bottom: 10px;
+  text-decoration: none;
+}
+
+.logout-linkt:hover {
+  background: #50545c;
+  border-radius: 20px;
+}
+
+.navlink-btn {
+  color: white;
+  padding-bottom: 5px;
+}
+
 .navbar-main {
-    width: 58%;
+    width: 100%;
     background-color: #34373c;
     font-size: 15px;
     height: 50px;
-    z-index: 100;
     top: 0;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
+}
+
+.icon-upload {
+  background: url(https://i.imgur.com/L74TL1K.png) center no-repeat;
+  background-size: contain;
+}
+
+.upload-btn {
+  display: inline-block;
+  justify-content: center;
+  line-height: 150%;
+  font-size: 14px;
+  font-weight: 500;
+  color: #f2f2f2;
+  width: 129px;
+  background: #1bb76e;
+  border-radius: 3px;
+}
+
+.upload-button-text {
+  margin: 4px;
 }
 
 .link-menu{
@@ -42,6 +92,10 @@
   align-content: center;
 }
 
+.hover-link {
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
 
 .logo-link {
   background: url(https://i.imgur.com/F6AHOiq.png) center no-repeat;
@@ -53,7 +107,8 @@
 
 .hover-link:hover{
   background: #50545c;
-  border-radius: 12px;
+  border-radius: 25px;
+  height: 85%
 }
 
 
@@ -64,6 +119,7 @@
   align-self: center;
   font-size: 14px;
 }
+
 .link-menu i{
   align-self: center;
   padding: auto 0;
@@ -106,23 +162,6 @@
 .navlink-btn {
   margin: auto 20px;
   text-decoration: none;
-}
-
-.user-nav, #global-search-container{
-
-  padding: 0 15px;
-  color: #f2f2f2;
-}
-
-.signin-link{
-  align-content: center;
-  margin: 5px 10px;
-  padding: 5px 0;
-  height: 25px;
-}
-.signin-link:hover{
-  background: #50545c;
-  border-radius: 6px;
 }
 
 #global-search-container:hover{

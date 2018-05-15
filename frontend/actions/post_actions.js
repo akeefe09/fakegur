@@ -3,22 +3,37 @@ import * as PostUtil from '../util/post_api_util';
 export const RECEIVE_POST = 'RECEIVE_POST';
 export const RECEIVE_ALL_POSTS = 'RECEIVE_All_POSTS';
 export const RECEIVE_POST_ERRORS = 'RECEIVE_POST_ERRORS';
-export const DELETE_POST = 'DELETE_POST';
+export const DESTROY_POST = 'DESTROY_POST';
 
-export const receivePost = (post) => ({
+export const receivePost = ({ image, comments, votes }) => ({
   type: RECEIVE_POST,
-  post,
+  image,
+  comments,
+  votes,
 });
 
-export const receiveAllPosts = (posts) => ({
+export const receiveAllPosts = ({ images, comments, users, votes }) => ({
   type: RECEIVE_ALL_POSTS,
-  posts
+  images,
+  comments,
+  users,
+  votes,
+});
+
+export const destroyPost = (id) => ({
+  type: DESTROY_POST,
+  id,
 });
 
 export const receivePostErrors = errors => ({
   type: RECEIVE_POST_ERRORS,
   errors,
 });
+
+export const deletePost = (id) => dispatch => {
+  return PostUtil.deletePost(id).then(post =>
+    dispatch(destroyPost(id)));
+};
 
 export const requestPost = (id) => dispatch => {
   return PostUtil.fetchPost(id).then(post =>
@@ -30,21 +45,16 @@ export const requestAllPosts = () => dispatch => {
     dispatch(receiveAllPosts(posts)));
 };
 
-export const createPost = (post) => dispatch => (
-  PostUtil.createPost(post).then(post => {
+export const createPost = (post) => dispatch => {
+  return PostUtil.createPost(post).then(post => {
     dispatch(receivePost(post));
-    return post;
-  }).fail(err => dispatch(receivePostErrors(err.responseJSON)))
-);
+  }, errors => {
+    dispatch(receivePostErrors(errors.responseJson));
+  });
+};
 
-export const deletePost = (id) => dispatch => (
-  PostUtil.deletePost(id).then(post => {
-    dispatch(deletePost(post));
-  }).fail(err => dispatch(receivePostErrors(err.responseJSON)))
-);
-
-export const editPost = (post) => (
-  PostUtil.editPost(post).then(post => (
-    dispatch(receivePost(post))
-  ));
-);
+export const editPost = (post)=> {
+  return PostUtil.editPost(post).then(post => {
+    dispatch(editPost(post));
+  });
+};

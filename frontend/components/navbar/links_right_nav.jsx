@@ -2,7 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Router, Route, Link} from 'react-router-dom';
 import { logout } from '../../actions/session_actions';
-import RightDropDown from './right_drop';
 
 const RightNav = ({ loggedIn, logout, user }) => {
   if (!loggedIn) {
@@ -11,6 +10,7 @@ const RightNav = ({ loggedIn, logout, user }) => {
         <li className="navbar-link">
           <Link to='/login' className='navlink-btn'> sign in </Link>
         </li>
+
         <li className='navbar-link'>
           <Link to='/signup' className='navlink-btn'> sign up </Link>
         </li>
@@ -19,10 +19,18 @@ const RightNav = ({ loggedIn, logout, user }) => {
   } else {
     return (
       <ul className='user-nav'>
-        <li className="navbar-link" onClick={ ()=> logout()}>
-          <Link to='/' className='navbar-logout'> Logout </Link>
+        <li className="upload-btn" onClick={() => this.props.openModal('upload')}>
+          <span className="icon-upload">
+          </span>
+          <span className="upload-button-text">New post
+          </span>
         </li>
-        <li className="navbar-user">
+
+        <li className="navbar-link" onClick={ ()=> logout()}>
+          <Link to='/' className='navlink-btn'> Logout </Link>
+        </li>
+
+        <li className="navbar-link">
           <Link to={`/users/${user.id}`}
             className='navlink-btn'> {user.username} </Link>
         </li>

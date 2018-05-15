@@ -1,7 +1,5 @@
 import React from 'react';
-// import MenuLeftDropdown from './menu_left_dropdown';
-// import RightNav from './links_right_nav';
-// import UploadButton from './upload_button';
+import RightNav from './links_right_nav';
 
 const NavBar = () => {
   return (
@@ -17,7 +15,7 @@ const NavBar = () => {
 
       </nav>
         <div className='nav-right'>
-
+          <RightNav />
         </div>
   </div>
 );};
