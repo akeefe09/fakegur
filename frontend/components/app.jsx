@@ -18,13 +18,13 @@ const App = () => {
       <Modal />
 
       <Route exact path='/' component={ NavBarContainer } />
-      <Route exact path={`/`} component={ IndexPage } />
       <Switch>
         <AuthRoute exact path="/login" component={ LoginFormContainer } />
         <AuthRoute exact path="/signup" component={ SignupFormContainer } />
         <Route path="/posts/:id" component={ PostContainer } />
+        <Route exact path='/' component={ IndexPage } />
+        <Route component= { NotFoundContainer } />
       </Switch>
-
 
     </div>);
 };

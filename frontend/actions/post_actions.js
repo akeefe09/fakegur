@@ -47,7 +47,8 @@ export const createPost = (post) => dispatch => {
   return PostUtil.createPost(post).then(post => {
     dispatch(receivePost(post));
   }, errors => {
-    dispatch(receivePostErrors(errors.responseJson));
+    debugger
+    dispatch(receivePostErrors(errors.responseJSON));
   });
 };
 

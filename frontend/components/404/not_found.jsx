@@ -13,7 +13,8 @@ class NotFound extends React.Component {
           <h1 className="four-text">404 NOT FOUND</h1>
           <div className="four-gif">
             <div>Sorry</div>
-            <img src="https://i.imgur.com/OKeoRPa.gif" />
+            <br/>
+            <img className="lost-gif" src="https://i.imgur.com/OKeoRPa.gif" />
           </div>
         </div>
       </div>

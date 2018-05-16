@@ -10,7 +10,21 @@ class UploadForm extends React.Component {
       description: '',
     };
     this.updateFile = this.updateFile.bind(this);
+    this.updateDescription = this.updateDescription.bind(this);
+    this.updateTitle = this.updateTitle.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  updateTitle(e) {
+    this.setState({
+      title: e.target.value
+    });
+  }
+
+  updateDescription(e) {
+    this.setState({
+      description: e.target.value
+    });
   }
 
   updateFile(e) {
@@ -29,8 +43,11 @@ class UploadForm extends React.Component {
     const formData = new FormData();
     if (this.state.imageFile) {
       formData.append("post[image]", this.state.imageFile);
-
-      this.props.createPost(formData);
+      formData.append("post[title]", this.state.title);
+      formData.append("post[description]", this.state.description);
+      this.props.createPost(formData).then(() => {
+        this.props.history.push()
+      });
       this.props.closeModal();
     }
   }
@@ -48,6 +65,8 @@ class UploadForm extends React.Component {
             </span>
           </label>
           <input id="file_upload" type="file" onChange={this.updateFile}/>
+          <input type="text" onChange={this.updateTitle} />
+          <input type="text" onChange={this.updateDescription} />
         </div>
         <div className="preview">
           <div className="preview_image">
