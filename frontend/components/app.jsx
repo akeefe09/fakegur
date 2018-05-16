@@ -15,9 +15,9 @@ const App = () => {
     <div className="source">
       <Modal />
 
+      <Route exact path='/' component={ NavBarContainer } />
       <Switch>
         <Route exact path={`/`} component={ IndexPage }/>
-        <Route exact path='/' component={ NavBarContainer } />
         <AuthRoute exact path="/login" component={ LoginFormContainer } />
         <AuthRoute exact path="/signup" component={ SignupFormContainer } />
       </Switch>

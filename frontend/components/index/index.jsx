@@ -4,13 +4,12 @@ import isEmpty from 'lodash/isEmpty';
 
 class IndexPage extends React.Component {
   componentDidMount() {
-    this.props.fetchPosts();
+    this.props.requestAllPosts();
   }
 
   render() {
     if (isEmpty(this.props.posts)) return null;
     let allPosts = [];
-
     allPosts = this.props.images.slice().map(img => {
       return (
         <div key={img.id} className="index-item">
@@ -21,13 +20,15 @@ class IndexPage extends React.Component {
         </div>
       )
     });
+    
     return (
       <div className="main-gallery">
         <ul>
           { allPosts }
         </ul>
       </div>
-    );
+    )
+
   }
 
 }

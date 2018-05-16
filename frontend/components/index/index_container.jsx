@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { fetchPosts } from '../../actions/post_actions';
+import { requestAllPosts } from '../../actions/post_actions';
 import IndexPage from './index';
 
 const mapStateToProps = (state) => {
@@ -10,7 +10,7 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = (dispatch) => ({
-  fetchPosts: () => dispatch(fetchPosts(id)),
+  requestAllPosts: () => dispatch(requestAllPosts()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(IndexPage);
