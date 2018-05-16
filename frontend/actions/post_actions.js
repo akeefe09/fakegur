@@ -8,8 +8,6 @@ export const DESTROY_POST = 'DESTROY_POST';
 export const receivePost = ({ image }) => ({
   type: RECEIVE_POST,
   image,
-  comments,
-  votes,
 });
 
 export const receiveAllPosts = ({ posts, users }) => ({
@@ -47,7 +45,6 @@ export const createPost = (post) => dispatch => {
   return PostUtil.createPost(post).then(post => {
     dispatch(receivePost(post));
   }, errors => {
-    debugger
     dispatch(receivePostErrors(errors.responseJSON));
   });
 };
