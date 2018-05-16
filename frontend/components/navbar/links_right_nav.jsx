@@ -2,8 +2,9 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Router, Route, Link} from 'react-router-dom';
 import { logout } from '../../actions/session_actions';
+import { openModal } from '../../actions/modal_actions';
 
-const RightNav = ({ loggedIn, logout, user }) => {
+const RightNav = ({ loggedIn, logout, user, openModal }) => {
   if (!loggedIn) {
     return (
       <ul className='user-nav'>
@@ -19,7 +20,7 @@ const RightNav = ({ loggedIn, logout, user }) => {
   } else {
     return (
       <ul className='user-nav'>
-        <li className="upload-btn" onClick={() => this.props.openModal('upload')}>
+        <li className="upload-btn" onClick={openModal.bind(this, 'upload')}>
           <span className="icon-upload">
           </span>
           <span className="upload-button-text">New post
@@ -47,9 +48,11 @@ const mapStateToProps = ({ session }) => {
     errors: session.errors
   };
 };
+
 const mapDispatchToProps = (dispatch) => {
   return {
-    logout: () => dispatch(logout())
+    logout: () => dispatch(logout()),
+    openModal: modal => dispatch(openModal(modal)),
   };
 };
 

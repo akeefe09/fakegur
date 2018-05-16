@@ -35,13 +35,13 @@ class UploadForm extends React.Component {
   render() {
     let submitButton =
     <button onClick={() => this.handleSubmit(this.props.formType)} className="upload_form_button">Submit</button>;
-    
+
     return (
       <div className="upload_form">
         <div className="choose_file">
           <label htmlFor="file_upload" className="custom_file_upload">
             <span>
-              Choose File
+              Browse
             </span>
           </label>
           <input id="file_upload" type="file" onChange={this.updateFile}/>
