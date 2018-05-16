@@ -6,29 +6,29 @@ export const LOGOUT_USER = 'LOGOUT_USER';
 export const REMOVE_ERRORS = 'REMOVE_ERRORS';
 
 export const logoutUser = () => {
-  return {
+  return ({
     type: LOGOUT_USER,
-  };
+  });
 };
 
 export const removeErrors = () => {
-  return {
+  return ({
     type: REMOVE_ERRORS
-  };
+  });
 };
 
 export const receiveCurrentUser = ( user ) => {
-  return {
+  return ({
     type: RECEIVE_CURRENT_USER,
     user,
-  };
+  });
 };
 
 export const receiveErrors = (errors) => {
-  return {
+  return ({
     type: RECEIVE_SESSION_ERRORS,
     errors,
-  };
+  });
 };
 
 export const login = (user) => dispatch => {

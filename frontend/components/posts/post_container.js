@@ -1,11 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { deletePost, fetchPost } from '../../post_actions';
+import { deletePost, fetchPost } from '../../actions/post_actions';
+import Post from './post';
 
 const mapStateToProps = (state, ownProps) => {
-  return {
-    post: state.entities.posts[]
-  };
+  return ({
+    currentUser: state.session.currentUser,
+    post: state.entities.posts[ownProps.match.params.id],
+    postId: ownProps.match.params.id,
+  });
 };
 
 const mapDispatchToProps = (dispatch) => {

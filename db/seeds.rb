@@ -8,8 +8,20 @@
 
 User.delete_all
 
-User.create!(
+u1 = User.create!(
   username: 'guest',
   password: 'password',
   email: 'guest@guest.com',
+)
+
+u2 = User.create!(
+  username: 'user1',
+  password: 'password',
+  email: 'user1@user1.com',
+)
+
+u3 = User.create!(
+  username: 'user2',
+  password: 'password',
+  email: 'user2@user2.com'
 )

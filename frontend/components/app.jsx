@@ -7,6 +7,8 @@ import LoginFormContainer from './session/login_form_container';
 import NavBarContainer from './navbar/navbar_container';
 import Modal from './modal/upload_modal';
 import IndexPage from './index/index_container';
+import NotFoundContainer from './404/not_found_container';
+import PostContainer from './posts/post_container';
 
 
 const App = () => {
@@ -16,11 +18,13 @@ const App = () => {
       <Modal />
 
       <Route exact path='/' component={ NavBarContainer } />
+      <Route exact path={`/`} component={ IndexPage } />
       <Switch>
-        <Route exact path={`/`} component={ IndexPage }/>
         <AuthRoute exact path="/login" component={ LoginFormContainer } />
         <AuthRoute exact path="/signup" component={ SignupFormContainer } />
+        <Route path="/posts/:id" component={ PostContainer } />
       </Switch>
+
 
     </div>);
 };

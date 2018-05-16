@@ -6,6 +6,8 @@ class UploadForm extends React.Component {
     this.state = {
       imageFile: null,
       imageUrl: null,
+      title: '',
+      description: '',
     };
     this.updateFile = this.updateFile.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -27,6 +29,7 @@ class UploadForm extends React.Component {
     const formData = new FormData();
     if (this.state.imageFile) {
       formData.append("post[image]", this.state.imageFile);
+
       this.props.createPost(formData);
       this.props.closeModal();
     }
@@ -50,6 +53,9 @@ class UploadForm extends React.Component {
           <div className="preview_image">
             <img src={this.state.imageUrl}/>
           </div>
+        </div>
+        <div className="input-div">
+
         </div>
         <div className="buttons">
           <button onClick={this.props.closeModal} className="cancel_button">Cancel</button>
