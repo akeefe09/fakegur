@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import PostContainer from './post_container';
 import NavBar from '../navbar/navbar';
 import CommentIndex from '../comments/comment_index_container';
-// import CreateComment from '../comments/create_comment_container';
+import CreateComment from '../comments/create_comment_container';
 
 class Post extends React.Component {
 
@@ -100,6 +100,10 @@ class Post extends React.Component {
                     </div>
                 </div>
               </div>
+            </div>
+
+            <div className="post-create-comment">
+              <CreateComment />
             </div>
 
             <div className="post-show-comment-container">

@@ -3,26 +3,30 @@ import React from 'react';
 class CreateComment extends React.Component {
   constructor(props) {
     super(props);
-    this.state: {
+    this.state = {
       body:''
     }
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
   }
 
+  handleSubmit(e) {
+    e.preventDefault();
+    if (this.props.loggedIn) {
+      const comment = {
+        body: this.state.body,
+        post_id: this.props.postId,
+      };
+      this.props.createComment(comment);
+    } else {
+      return window.alert("Must be logged in to comment")
+    }
+  }
+
   update(field) {
     return e => this.setState({
       [field]: e.currentTarget.value
     });
-  }
-
-  handleSubmit(e) {
-    e.preventDefault();
-    if (this.props.loggedIn) {
-      body: this.state.body,
-    } else {
-      return window.alert("Must be logged in to comment")
-    }
   }
 
   render() {

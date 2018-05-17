@@ -46,7 +46,7 @@ export const requestComment = (id) => (dispatch) => {
 
 export const createComment = (comment) => (dispatch) => (
   CommentUtil.createComment(comment).then(comment => {
-    return dispatch(receiveOneComment(comment));
+    return dispatch(receiveComment(comment));
   }).fail(err => dispatch(receiveCommentErrors(err.responseJSON)))
 );
 

@@ -1,7 +1,8 @@
 class Api::CommentsController < ApplicationController
 
   def create
-    @comment = Comment.new(comment_params)
+    @comment = current_user.comments.new(comment_params)
+    debugger
     if @comment.save
       render :show
     end

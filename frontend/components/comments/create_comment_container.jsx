@@ -1,6 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import CreateComment from './create_comment';
+import { createComment } from '../../actions/comment_actions';
+import { withRouter } from 'react-router-dom';
 
 const mapDispatchToProps = (dispatch) => {
   return ({
@@ -8,12 +10,12 @@ const mapDispatchToProps = (dispatch) => {
   });
 };
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
   return ({
     currentUser: state.session.currentUser,
-    body: ownProps.body || "",
     loggedIn: Boolean(state.session.currentUser),
+    postId: ownProps.match.params.id,
   });
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(CreateComment);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(CreateComment));
