@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import PostContainer from './post_container';
 import NavBar from '../navbar/navbar';
+import CommentIndex from '../comments/comment_index_container';
+// import CreateComment from '../comments/create_comment_container';
 
 class Post extends React.Component {
 
@@ -16,7 +18,7 @@ class Post extends React.Component {
         <header className='navbar-container'>
           <NavBar/>
         </header>
-        {post ? (
+        { post ? (
         <div className="whole-container">
           <div className="post-container-main">
             <div className="post-box">
@@ -65,7 +67,7 @@ class Post extends React.Component {
                       <div className="post-actions-right">
                         <span className="ellipses">...</span>
                           <div className="post-actions-right-dropdown">
-                            <div className>
+                            <div>
                               {post.user_id === this.props.currentUser.id ?
                                 <div onClick={() => this.props.deletePost(post.id)} className='deleteButton'>
                                   Delete Post
@@ -100,7 +102,8 @@ class Post extends React.Component {
               </div>
             </div>
 
-            <div>
+            <div className="post-show-comment-container">
+              <CommentIndex />
             </div>
 
           </div>

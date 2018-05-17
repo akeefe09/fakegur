@@ -1,5 +1,6 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
+import FaCloudUpload from "react-icons/lib/fa/cloud-upload";
 
 class UploadForm extends React.Component {
   constructor(props){
@@ -19,8 +20,9 @@ class UploadForm extends React.Component {
 
   postRoute(post) {
     this.props.closeModal();
-    const postId = this.props.posts.post.id
-    window.location.href = `/#/posts/${postId}`;
+    const postIds = Object.keys(this.props.posts);
+    this.props.history.push(`/posts/${postIds[postIds.length-1]}`);
+    // window.location.href = `/#/posts/${postIds[postIds.length-1]}`;
   }
 
   updateTitle(e) {
@@ -59,6 +61,10 @@ class UploadForm extends React.Component {
     }
   }
 
+  // <div className="icon-upload">
+  //   <FaCloudUpload />
+  // </div>
+
   render() {
     let submitButton =
     <button onClick={() => this.handleSubmit(this.props.formType)} className="upload-form-button">Submit</button>;
@@ -72,6 +78,7 @@ class UploadForm extends React.Component {
           <div className="modal-top-box">
             <img src="https://i.imgur.com/MaSAo2d.png" className="upload-cat" />
             <img src="https://i.imgur.com/Uu2OWwo.png" className="upload-arrow" />
+
           </div>
           <div className="upload-text">
             <label htmlFor="file_upload" className="file-upload-box">
@@ -90,6 +97,7 @@ class UploadForm extends React.Component {
         </div>
         <div className="preview">
           <div className="preview-image">
+
             <img className="preview-upload" src={this.state.imageUrl}/>
           </div>
         </div>

@@ -5,14 +5,15 @@ import CreateComment from './create_comment';
 const mapDispatchToProps = (dispatch) => {
   return ({
     createComment: (comment) => dispatch(createComment(comment)),
-    deleteComment: (id) => dispatch(deleteComment(id))
   });
 };
 
-const mapStateToProps = (post) => {
+const mapStateToProps = (state) => {
   return ({
-    
-  })
+    currentUser: state.session.currentUser,
+    body: ownProps.body || "",
+    loggedIn: Boolean(state.session.currentUser),
+  });
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(CreateComment);
