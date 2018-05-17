@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PostContainer from './post_container';
+import NavBar from '../navbar/navbar';
 
 class Post extends React.Component {
 
@@ -14,6 +15,9 @@ class Post extends React.Component {
       <div className="post-div">
         {post ? (
           <div>
+            <header className='navbar-container'>
+              <NavBar/>
+            </header>
                 <div className="post-title">{post.title}</div>
 
                 <div className="post-user">
@@ -30,6 +34,10 @@ class Post extends React.Component {
                   <p>
                     {post.description}
                   </p>
+                  {post.user_id === this.props.currentUser.id ?
+                    <button onClick={() => this.props.deletePost(post.id)} className='deleteButton'>
+                      Delete Post
+                    </button> : null}
                 </div>
               </div>) : <h1>Loading....</h1>}
       </div>

@@ -4,10 +4,11 @@ import { deletePost, requestPost } from '../../actions/post_actions';
 import Post from './post';
 
 const mapStateToProps = (state, ownProps) => {
+  const postId = ownProps.match.params.id;
   return ({
     currentUser: state.session.currentUser,
-    post: state.entities.posts.post,
-    postId: ownProps.match.params.id,
+    post: state.entities.posts[postId],
+    postId
   });
 };
 

@@ -20,7 +20,6 @@ class UploadForm extends React.Component {
   postRoute(post) {
     this.props.closeModal();
     const postId = this.props.posts.post.id
-    console.log('the posttttt', this);
     window.location.href = `/#/posts/${postId}`;
   }
 
