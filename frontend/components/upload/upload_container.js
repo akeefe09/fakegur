@@ -8,6 +8,7 @@ import { fetchUser } from '../../actions/user_actions';
 const mapStateToProps = (state) => {
   return {
     formType: 'post',
+    posts: state.entities.posts
   }
 }
 

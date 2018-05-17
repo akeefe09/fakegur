@@ -12,24 +12,26 @@ class Post extends React.Component {
     const post = this.props.post;
     return (
       <div className="post-div">
-        <div className="post-title">{post.title}</div>
+        {post ? (
+          <div>
+                <div className="post-title">{post.title}</div>
 
-        <div className="post-user">
-          <Link to={`/users/${this.props.user.id}`}>
-            {this.props.user.username}
-          </Link>
-        </div>
+                <div className="post-user">
+                  <Link to={`/users/${post.user_id}`}>
+                    {post.user_id}
+                  </Link>
+                </div>
 
-        <div className="post-image">
-          <img src={post.image_url} />
-        </div>
+                <div className="post-image">
+                  <img src={post.image_url} />
+                </div>
 
-        <div className="post-description">
-          <p>
-            {this.props.post.description}
-          </p>
-        </div>
-
+                <div className="post-description">
+                  <p>
+                    {post.description}
+                  </p>
+                </div>
+              </div>) : <h1>Loading....</h1>}
       </div>
     );
   }

@@ -5,9 +5,9 @@ export const RECEIVE_ALL_POSTS = 'RECEIVE_All_POSTS';
 export const RECEIVE_POST_ERRORS = 'RECEIVE_POST_ERRORS';
 export const DESTROY_POST = 'DESTROY_POST';
 
-export const receivePost = ({ image }) => ({
+export const receivePost = (post) => ({
   type: RECEIVE_POST,
-  image,
+  post,
 });
 
 export const receiveAllPosts = ({ posts, users }) => ({

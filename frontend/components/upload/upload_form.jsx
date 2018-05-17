@@ -19,8 +19,9 @@ class UploadForm extends React.Component {
 
   postRoute(post) {
     this.props.closeModal();
-    const postId = Object.keys(data.payload.post);
-    this.props.history.push(`/gallery/${postId}`);
+    const postId = this.props.posts.post.id
+    console.log('the posttttt', this);
+    window.location.href = `/#/posts/${postId}`;
   }
 
   updateTitle(e) {

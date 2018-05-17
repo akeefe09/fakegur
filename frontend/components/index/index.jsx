@@ -10,7 +10,7 @@ class IndexPage extends React.Component {
   render() {
     if (isEmpty(this.props.posts)) return null;
     let allPosts = [];
-    allPosts = this.props.images.slice().map(img => {
+    allPosts = this.props.images.slice().map((img, index) => {
       return (
         <div key={img.id} className="index-item">
           <div className="index-item-title">{img.title}</div>
@@ -20,7 +20,7 @@ class IndexPage extends React.Component {
         </div>
       )
     });
-    
+
     return (
       <div className="main-gallery">
         <ul>
