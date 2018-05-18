@@ -1,4 +1,5 @@
-[logo]: https://i.imgur.com/F6AHOiq.png "Fakegur logo"
+[Inline-style:
+![alt text](https://i.imgur.com/F6AHOiq.png "Fakegur logo")
 
 **Fakegur**
 
