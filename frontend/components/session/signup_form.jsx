@@ -95,7 +95,7 @@ class SignUpForm extends React.Component {
               <input placeholder="Password" type="password"
                 value={this.state.password}
                 onChange={this.update('password')} />
-              <a href="https://youtu.be/N1ug9-rhSs4?t=110">
+              <a href="https://youtu.be/N1ug9-rhSs4?t=110" target="_blank">
                 <div className="session-text">By registering you agree to our terms of service</div>
               </a>
             </div>

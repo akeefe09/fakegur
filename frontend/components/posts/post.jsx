@@ -11,12 +11,20 @@ class Post extends React.Component {
     this.state = {
       altText: 'Loading...'
     }
+    this.handleDelete = this.handleDelete.bind(this);
   }
 
   componentDidMount() {
-    this.props.fetchPost(this.props.postId)
-    // console.log('componentDidMount got hereee!!', this.props.post);
+    this.props.fetchPost(this.props.postId).fail(err => {
+      if (err.status === 404) {
+        this.setState({altText: 'Post not found'});
+      }
+    });
   }
+
+  // altText() {
+  //   if (!this.props.post) return <h1>Post not found</h1>;
+  // }
 
   // componentWillReceiveProps(nextProps) {
   //   console.log('componentwillRece got hereee!!', this.props.post);
@@ -25,6 +33,10 @@ class Post extends React.Component {
   //     //this.setState({altText: 'Post not found'});
   //   }
   // }
+
+  handleDelete() {
+    this.props.deletePost(this.props.post.id).then(() => this.setState({altText: 'Post not found'}));
+  }
 
   render() {
     const {post, currentUser} = this.props;
@@ -85,10 +97,7 @@ class Post extends React.Component {
                           <div className="post-actions-right-dropdown">
                             <div>
                               {post.user_id === (currentUser && currentUser.id) ?
-                                <div onClick={() => {
-                                    //this.setState({altText: 'Post not found'});
-                                    this.props.deletePost(post.id).then(() => this.setState({altText: 'Post not found'}))
-                                  }} className='deleteButton'>
+                                <div onClick={this.handleDelete} className='deleteButton'>
                                   Delete Post
                                 </div> : null}
                             </div>

@@ -51,7 +51,7 @@ class LoginForm extends React.Component {
 
         <div className="about-footer" >
           <a className="about-link"
-            href="https://github.com/akeefe09/fakegur/blob/master/README.md">
+            href="https://github.com/akeefe09/fakegur/blob/master/README.md" target="_blank">
             about
           </a>
         </div>

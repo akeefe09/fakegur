@@ -16,7 +16,7 @@ const PostReducer = (state = {}, action) => {
       return merge({}, state, {[action.post.id]: action.post});
     case DELETE_POST:
     //console.log('newState.entiessss befor', state);
-      delete newState.entities[action.id];
+      delete newState[action.id];
     //  console.log('newState.entiessss', newState.entities);
       return newState;
     default:

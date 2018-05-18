@@ -13,13 +13,13 @@ export const fetchPosts = () => {
 };
 
 export const deletePost = (id) => {
-  //return $.ajax({
-  //  method: 'DELETE',
-  //  url: `/api/posts/${id}`,
-//  });
-  return fetch(`/api/posts/${id}`, {
-    method: 'DELETE'
-  }).then(res => res.json());
+  return $.ajax({
+   method: 'DELETE',
+   url: `/api/posts/${id}`,
+  });
+  // return fetch(`/api/posts/${id}`, {
+  //   method: 'DELETE'
+  // }).then(res => res.json());
 };
 
 export const editPost = (post) => {
