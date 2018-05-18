@@ -30,6 +30,7 @@ class Post extends React.Component {
     const {post, currentUser} = this.props;
     return (
       <div className="post-div">
+        <div className="jeff">
         <header className='navbar-container'>
           <NavBar/>
         </header>
@@ -95,22 +96,26 @@ class Post extends React.Component {
                         </div>
 
                         <div className="social-icons-right">
-                          <a href="http://www.facebook.com/" target="_blank">
-                            <span className="social-icon icon-f">
+
+                          <a className="social-a icon-f" href="http://www.facebook.com/" target="_blank">
+                            <span className="social-icon">
                             </span>
                           </a>
-                          <a href="https://twitter.com/" target="_blank">
-                            <span className="social-icon icon-twt">
+                          <a className="social-a icon-twt" href="https://twitter.com/" target="_blank">
+                            <span className="social-icon">
                             </span>
                           </a>
 
+                          <a className="social-a icon-pin" href="http://pinterest.com/" target="_blank">
+                            <span className="social-icon">
+                            </span>
+                          </a>
 
-                          <span className="social-icon icon-pin">
-                            <a href="http://pinterest.com/" />
-                          </span>
-                          <span className="social-icon icon-red">
-                            <a href="http://www.reddit.com/" />
-                          </span>
+                          <a className="social-a icon-red" href="http://www.reddit.com/" target="_blank">
+                            <span className="social-icon">
+                            </span>
+                          </a>
+
                         </div>
                       </div>
                       <div className="post-data-footer">
@@ -134,6 +139,7 @@ class Post extends React.Component {
 
           </div>
         ) : <h1>{this.state.altText}</h1>}
+        </div>
       </div>
     );
   }
