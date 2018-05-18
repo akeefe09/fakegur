@@ -1,0 +1,151 @@
+.main-gallery-outside {
+  position: relative;
+  border-radius: 10px;
+  margin: 10px auto 0;
+  min-height: 150px;
+  z-index: 0;
+  clear: both;
+}
+
+.top-sentence {
+  width: 100%;
+  font-size: 22px;
+  padding: 10px 0 25px;
+  color: #fff;
+  line-height: 33px;
+  position: relative;
+  text-align: center;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline;
+  margin: 0;
+}
+
+.before-text {
+  line-height: 33px;
+  font-size: 22px;
+}
+
+.sort-icons {
+  max-width: 445px;
+  font-weight: 400;
+  margin-right: 10px;
+  line-height: 33px;
+  font-size: 22px;
+  float: right;
+  padding: 0;
+  position: absolute;
+  top: 17px;
+  right: 0;
+}
+
+.clock {
+  color: grey;
+  padding-right: 20px;
+}
+
+.clock:hover {
+  color: white;
+}
+
+.shuffle {
+  color: grey;
+  padding-right: 100px;
+}
+
+.shuffle:hover {
+  color: white;
+}
+
+.gallery-message {
+  font-weight: 400;
+  text-shadow: none;
+  font-size: 14px;
+  width: 55%;
+  padding-top: 10px;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 20px;
+  color: grey;
+  position: relative;
+}
+
+.index-panel {
+  padding: 0;
+  background-color: transparent;
+  padding: 25px;
+  border-radius: 5px;
+  background-color: #2C2F34;
+  width: 945px;
+  margin: auto;
+}
+
+.imageList {
+  width: 100%;
+  display: inline-block;
+  vertical-align: top;
+  right: auto;
+  left: 0;
+  position: relative;
+  z-index: 2;
+}
+
+.index-posts {
+
+}
+
+.image-cards {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline;
+  display: block;
+}
+
+.index-item {
+  width: 180px;
+  height: 180px;
+  line-height: 0;
+  background-color: #181817;
+  display: inline-block;
+  margin: 4px 2px;
+  position: relative;
+  border: 2px solid #444442;
+}
+
+.index-item:hover {
+  border: 2px solid #1bb76e;
+}
+
+.index-item-link {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.index-item-img {
+  width: auto;
+  height: 180px;
+  line-height: 0;
+  outline: #121211 solid 1px;
+  outline-offset: -1px;
+  border-color: #181817;
+}
+
+.index-item-title {
+  display: none;
+}
+
+.index-item-title:hover {
+  display: block;
+  bottom: -70px;
+  background: rgba(0,0,0,.7);
+  position: absolute;
+  color: #FFF;
+  height: 70px;
+  width: 100%;
+}

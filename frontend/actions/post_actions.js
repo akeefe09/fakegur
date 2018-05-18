@@ -3,7 +3,7 @@ import * as PostUtil from '../util/post_api_util';
 export const RECEIVE_POST = 'RECEIVE_POST';
 export const RECEIVE_ALL_POSTS = 'RECEIVE_All_POSTS';
 export const RECEIVE_POST_ERRORS = 'RECEIVE_POST_ERRORS';
-export const DESTROY_POST = 'DESTROY_POST';
+export const DELETE_POST = 'DELETE_POST';
 
 export const receivePost = ({post, comments}) => ({
   type: RECEIVE_POST,
@@ -18,7 +18,7 @@ export const receiveAllPosts = ({ posts, users }) => ({
 });
 
 export const destroyPost = (id) => ({
-  type: DESTROY_POST,
+  type: DELETE_POST,
   id,
 });
 
@@ -33,8 +33,9 @@ export const deletePost = (id) => dispatch => {
 };
 
 export const requestPost = (id) => dispatch => {
-  return PostUtil.fetchPost(id).then(post =>
-    dispatch(receivePost(post)));
+  return PostUtil.fetchPost(id).then(post => {
+      dispatch(receivePost(post));
+    })
 };
 
 export const requestAllPosts = () => dispatch => {

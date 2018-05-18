@@ -138,13 +138,13 @@
     vertical-align: baseline;
 }
 
-//
 .nav-right {
   margin: auto 0;
   display: inline-flex;
   align-content: center;
   justify-content: space-between;
 }
+
 .user-nav {
   align-self: center;
   align-content: center;
@@ -153,10 +153,10 @@
 .nav-right ul li {
   margin: 0;
   list-style: none;
-    display: inline-flex;
-    user-select: none;
-    padding: 0;
-    // position: relative;
+  display: inline-flex;
+  user-select: none;
+  padding: 0;
+  // position: relative;
 }
 
 .navlink-btn {

@@ -23,7 +23,7 @@ const App = () => {
         <AuthRoute exact path="/signup" component={ SignupFormContainer } />
         <Route path="/posts/:id" component={ PostContainer } />
         <Route exact path='/' component={ IndexPage } />
-        <Route component= { NotFoundContainer } />
+        <Route path="*" component= { NotFoundContainer } />
       </Switch>
 
     </div>);

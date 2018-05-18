@@ -6,13 +6,28 @@ import CommentIndex from '../comments/comment_index_container';
 import CreateComment from '../comments/create_comment_container';
 
 class Post extends React.Component {
-
-  componentDidMount() {
-    this.props.fetchPost(this.props.postId);
+  constructor() {
+    super();
+    this.state = {
+      altText: 'Loading...'
+    }
   }
 
+  componentDidMount() {
+    this.props.fetchPost(this.props.postId)
+    // console.log('componentDidMount got hereee!!', this.props.post);
+  }
+
+  // componentWillReceiveProps(nextProps) {
+  //   console.log('componentwillRece got hereee!!', this.props.post);
+  //   if (this.props.post == nextProps.post) {
+  //     console.log('checked');
+  //     //this.setState({altText: 'Post not found'});
+  //   }
+  // }
+
   render() {
-    const post = this.props.post;
+    const {post, currentUser} = this.props;
     return (
       <div className="post-div">
         <header className='navbar-container'>
@@ -68,8 +83,11 @@ class Post extends React.Component {
                         <span className="ellipses">...</span>
                           <div className="post-actions-right-dropdown">
                             <div>
-                              {post.user_id === this.props.currentUser.id ?
-                                <div onClick={() => this.props.deletePost(post.id)} className='deleteButton'>
+                              {post.user_id === (currentUser && currentUser.id) ?
+                                <div onClick={() => {
+                                    //this.setState({altText: 'Post not found'});
+                                    this.props.deletePost(post.id).then(() => this.setState({altText: 'Post not found'}))
+                                  }} className='deleteButton'>
                                   Delete Post
                                 </div> : null}
                             </div>
@@ -77,12 +95,16 @@ class Post extends React.Component {
                         </div>
 
                         <div className="social-icons-right">
-                          <span className="social-icon icon-f">
-                            <a href="http://www.facebook.com/" />
-                          </span>
-                          <span className="social-icon icon-twt">
-                            <a href="https://twitter.com/" />
-                          </span>
+                          <a href="http://www.facebook.com/" target="_blank">
+                            <span className="social-icon icon-f">
+                            </span>
+                          </a>
+                          <a href="https://twitter.com/" target="_blank">
+                            <span className="social-icon icon-twt">
+                            </span>
+                          </a>
+
+
                           <span className="social-icon icon-pin">
                             <a href="http://pinterest.com/" />
                           </span>
@@ -111,7 +133,7 @@ class Post extends React.Component {
             </div>
 
           </div>
-            ) : <h1>Loading....</h1>}
+        ) : <h1>{this.state.altText}</h1>}
       </div>
     );
   }
