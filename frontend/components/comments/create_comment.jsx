@@ -33,16 +33,13 @@ class CreateComment extends React.Component {
     return(
       <div className="create-comment-form-container">
         <form className="create-comment-form">
-          <div className="">
+          <div className="input-c">
             <input type="text" className="comment-body-text"
               placeholder="Write a comment"
               onChange={this.update('body')}
               value={this.state.body}></input>
-
-            <div className="comment-button-div">
               <button onClick={this.handleSubmit}
                 className="create-comment-button">Post</button>
-            </div>
           </div>
         </form>
       </div>

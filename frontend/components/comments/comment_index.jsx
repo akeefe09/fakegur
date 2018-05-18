@@ -8,7 +8,7 @@ class CommentIndex extends React.Component {
   }
 
   render() {
-    
+
     if (isEmpty(this.props.comments)) {
       return null;
     }
@@ -16,16 +16,20 @@ class CommentIndex extends React.Component {
     let allComments = this.props.comments.map((comment, index) => {
       return (
         <div key={comment.id} className="comment-item">
-          <div className="comment-item-body">{comment.body}</div>
+          <div className="comment-item-spacer">
+            <div className="comment-item-body">{comment.body}</div>
+          </div>
         </div>
       )
     });
 
     return (
-      <div className="comment-container">
-        <ul>
-          { allComments }
-        </ul>
+      <div className="comment-spacer">
+        <div className="comment-container">COMMENTS
+          <div>
+            { allComments }
+          </div>
+        </div>
       </div>
     )
 
