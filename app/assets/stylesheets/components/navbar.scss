@@ -69,6 +69,7 @@
   justify-content: center;
   line-height: 150%;
   font-size: 14px;
+  margin-top: 10px;
   font-weight: 500;
   color: #f2f2f2;
   width: 129px;
@@ -78,6 +79,11 @@
 
 .upload-button-text {
   margin: 4px;
+}
+
+.upload-fa {
+  padding-right: 10px;
+  font-size: 16px;
 }
 
 .link-menu{
@@ -127,15 +133,15 @@
 
 .upload-button-container {
   position: relative;
-    display: flex;
-    width: 160px;
-    margin: 9px 0px 9px 20px;
-    border-radius: 4px;
-    border: 1px solid #1bb76e;
-    background: #1bb76e;
-    cursor: pointer;
-    padding: 0;
-    vertical-align: baseline;
+  display: flex;
+  width: 160px;
+  margin: 9px 0px 9px 20px;
+  border-radius: 4px;
+  border: 1px solid #1bb76e;
+  background: #1bb76e;
+  cursor: pointer;
+  padding: 0;
+  vertical-align: baseline;
 }
 
 .nav-right {
@@ -143,15 +149,17 @@
   display: inline-flex;
   align-content: center;
   justify-content: space-between;
+  padding-right: 20px;
 }
 
 .user-nav {
   align-self: center;
   align-content: center;
+  margin-top: 0;
 }
 
 .nav-right ul li {
-  margin: 0;
+  margin-right: 20px;
   list-style: none;
   display: inline-flex;
   user-select: none;
@@ -162,4 +170,24 @@
 .navlink-btn {
   margin: auto 20px;
   text-decoration: none;
+}
+
+.logout-l {
+  position: relative;
+  top: -10px;
+}
+
+.user-nav-name {
+  position: relative;
+  top: -10px;
+}
+
+.sign-in-l {
+  position: relative;
+  top: 10px;
+}
+
+.sign-up-l {
+  position: relative;
+  top: 10px;
 }
