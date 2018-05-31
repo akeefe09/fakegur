@@ -7,6 +7,17 @@ class Api::CommentsController < ApplicationController
     end
   end
 
+  def downvote
+    vote(-1)
+  end
+
+  def upvote
+    vote(1)
+  end
+
+  def vote
+  end
+
   private
   def comment_params
     params.require(:comment).permit(:body, :user_id, :post_id)
