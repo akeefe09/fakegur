@@ -28,6 +28,14 @@ class Api::PostsController < ApplicationController
 
   end
 
+  def downvote
+    vote(-1)
+  end
+
+  def upvote
+    vote(1)
+  end
+
   def destroy
     @post = Post.find(params[:id])
     if @post.destroy
@@ -35,6 +43,15 @@ class Api::PostsController < ApplicationController
     else
       render json: @post.errors.full_messages, status: 422
     end
+  end
+
+  def vote(direction)
+    @post = Post.find(params[:id])
+    @vote = @post.votes.find_or_initialize_by(user: current_user)
+    unless @vote.update(value: direction)
+      flash[:errors] = @vote.errors.full_messages
+    end
+    redirect_to post_url(@post)
   end
 
   private

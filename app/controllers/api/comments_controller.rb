@@ -15,7 +15,13 @@ class Api::CommentsController < ApplicationController
     vote(1)
   end
 
-  def vote
+  def vote(direction)
+    @comment = Comment.find(params[:id])
+    @vote = @comment.votes.find_or_initialize_by(user: current_user)
+    unless @vote.update(value: direction)
+      flash[:errors] = @user_vote.errors.full_messages
+    end
+    redirect_to comment_url(@comment)
   end
 
   private

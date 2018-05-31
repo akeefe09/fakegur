@@ -12,3 +12,11 @@ export const deleteVote = ({id}) => (
     url: `/api/votes/${id}`
   })
 );
+
+export const editVote = vote => (
+  $.ajax({
+    method: 'PATCH',
+    url: `/api/votes/${vote.vote.id}`,
+    data: vote
+  })
+);

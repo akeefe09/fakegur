@@ -38,6 +38,10 @@ class Post extends React.Component {
     this.props.deletePost(this.props.post.id).then(() => this.setState({altText: 'Post not found'}));
   }
 
+  // displayVotes() {
+  //
+  // }
+
   render() {
     const {post, currentUser} = this.props;
     return (
