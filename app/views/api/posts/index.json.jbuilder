@@ -13,13 +13,3 @@ json.users do
     end
   end
 end
-
-# json.comments do
-#   @posts.each do |post|
-#     post.comments.each do |post|
-#       json.set! post.id do
-#         json.partial! 'api/comments/comment', comment: comment
-#       end
-#     end
-#   end
-# end
