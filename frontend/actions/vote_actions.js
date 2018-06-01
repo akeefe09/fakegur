@@ -8,21 +8,17 @@ export const RECEIVE_POST = 'RECEIVE_POST';
 export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
 export const DELETE_POST = 'DELETE_POST';
 
-const removeVote = vote => ({
-    type: RECEIVE_USER,
-    vote,
-});
+// const removeVote = vote => ({
+//     type: RECEIVE_USER,
+//     vote,
+// });
 
 export const receiveErrors = errors => ({
   type: RECEIVE_ERRORS,
   errors,
 });
 
-export const deleteVote = params => dispatch => {
-  return VoteUtil.deleteVote(params).then(voted => {
-    dispatch(type(voted));
-  });
-};
+
 
 export const createVote = vote => dispatch => {
   return VoteUtil.createVote(vote).then(voted => {

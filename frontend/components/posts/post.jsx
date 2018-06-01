@@ -12,6 +12,7 @@ class Post extends React.Component {
       altText: 'Loading...'
     }
     this.handleDelete = this.handleDelete.bind(this);
+    // this.displayVotes = this.displayVotes.bind(this);
   }
 
   componentDidMount() {
@@ -21,26 +22,25 @@ class Post extends React.Component {
       }
     });
   }
-
-  // altText() {
-  //   if (!this.props.post) return <h1>Post not found</h1>;
-  // }
-
-  // componentWillReceiveProps(nextProps) {
-  //   console.log('componentwillRece got hereee!!', this.props.post);
-  //   if (this.props.post == nextProps.post) {
-  //     console.log('checked');
-  //     //this.setState({altText: 'Post not found'});
+  //
+  // displayVotes() {
+  //   const votesCount = this.props.totalVotes;
+  //   let votesString;
+  //   if (votesCount !== 0) {
+  //     if (votesCount === 1 || votesCount === -1) {
+  //       votesString = ""
+  //     }
+  //   } else {
+  //     votesString = "0 Votes";
   //   }
+  //   return votesString;
   // }
+
+
 
   handleDelete() {
     this.props.deletePost(this.props.post.id).then(() => this.setState({altText: 'Post not found'}));
   }
-
-  // displayVotes() {
-  //
-  // }
 
   render() {
     const {post, currentUser} = this.props;

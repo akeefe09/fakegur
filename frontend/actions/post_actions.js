@@ -5,11 +5,13 @@ export const RECEIVE_ALL_POSTS = 'RECEIVE_All_POSTS';
 export const RECEIVE_POST_ERRORS = 'RECEIVE_POST_ERRORS';
 export const DELETE_POST = 'DELETE_POST';
 
-export const receivePost = ({post, comments}) => ({
+export const receivePost = ({ post, comments, votes }) => {
+  return {
   type: RECEIVE_POST,
   post,
-  comments
-});
+  comments,
+  votes,
+}};
 
 export const receiveAllPosts = ({ posts, users }) => ({
   type: RECEIVE_ALL_POSTS,

@@ -12,9 +12,9 @@ json.comments do
 end
 
 json.votes do
-  @post.votes.each do
+  @post.votes.each do |vote|
     json.set! vote.id do
-
+      json.partial! 'api/votes/new', vote: vote
     end
   end
 end
