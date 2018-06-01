@@ -8,7 +8,6 @@ module Votable
       dependent: :destroy
   end
 
-  # def votes
-  #   self.votes.sum(:value)
-  # end
+  
+
 end

@@ -4,9 +4,15 @@ Rails.application.routes.draw do
   root to: 'static_pages#root'
 
   namespace :api, defaults: {format: :json} do
-    resources :votes
     resources :comments
-    resources :images
+
+    resources :posts do
+      resources :votes
+    end
+
+    resources :comments do
+      resources :votes
+    end
 
     resources :posts do
       resources :comments, only: [:index]

@@ -11,11 +11,10 @@ json.comments do
   end
 end
 
-
 json.votes do
   @post.votes.each do
     json.set! vote.id do
-      
+
     end
   end
 end
