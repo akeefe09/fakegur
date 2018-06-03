@@ -12,7 +12,7 @@ class Post extends React.Component {
       altText: 'Loading...'
     }
     this.handleDelete = this.handleDelete.bind(this);
-    // this.displayVotes = this.displayVotes.bind(this);
+    this.displayVotes = this.displayVotes.bind(this);
   }
 
   componentDidMount() {
@@ -22,21 +22,34 @@ class Post extends React.Component {
       }
     });
   }
-  //
-  // displayVotes() {
-  //   const votesCount = this.props.totalVotes;
-  //   let votesString;
-  //   if (votesCount !== 0) {
-  //     if (votesCount === 1 || votesCount === -1) {
-  //       votesString = ""
-  //     }
-  //   } else {
-  //     votesString = "0 Votes";
-  //   }
-  //   return votesString;
-  // }
 
+  displayVotes() {
+    const votesCount = this.props.totalVotes;
+    let votesString;
+    if (votesCount !== 0) {
+      if (votesCount === 1 || votesCount === -1) {
+        votesString = (`${votesCount} vote`)
+      } else {
+        votesString = (`${votesCount} votes`)
+      }
+    } else {
+      votesString = "0 Votes";
+    }
+    return votesString;
+  }
 
+  vote(value) {
+    if (this.props.loggedIn) {
+      let voteData = {
+        votable_type: "Post",
+        votable_id: this.props.postId,
+        value
+      }
+      this.props.createVote(voteData);
+    } else {
+      return window.alert("Must be logged in to vote")
+    }
+  }
 
   handleDelete() {
     this.props.deletePost(this.props.post.id).then(() => this.setState({altText: 'Post not found'}));
@@ -133,7 +146,7 @@ class Post extends React.Component {
                       </div>
                       <div className="post-data-footer">
                         <span className="post-stats">
-                          <span className="stats-points">7 points</span>
+                          <span className="stats-points">{this.displayVotes()}</span>
                           <span className="stats-views">22 views</span>
                         </span>
                       </div>

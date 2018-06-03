@@ -17,6 +17,7 @@ const mapStateToProps = (state, ownProps) => {
 
   return ({
     currentUser: state.session.currentUser,
+    loggedIn: Boolean(state.session.currentUser),
     post: state.entities.posts[postId],
     postId,
     totalVotes,
