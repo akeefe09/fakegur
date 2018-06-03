@@ -1,5 +1,15 @@
 class Api::VotesController < ApplicationController
 
+  def render_post(vote)
+    if vote.votable_type.include?("Post")
+      id = vote.votable_id
+    else
+      id = Comment.find(vote.votable_id).post.id
+    end
+    @post = Post.find(id)
+    render "api/posts/show"
+  end
+
   def create
     @vote = Vote.new(vote_params)
     if (params[:comment_id])
@@ -11,7 +21,8 @@ class Api::VotesController < ApplicationController
     end
 
     if @vote.save
-      render "api/"
+      render_post(vote)
+    else
       render json: @vote.errors.full_messages
     end
   end
@@ -20,7 +31,7 @@ class Api::VotesController < ApplicationController
     @vote = Vote.find(params[:vote_id])
     if @vote
       @vote.destroy
-      render_post(vote
+      render_post(vote)
     else
       render json: ["Error"]
     end

@@ -47,7 +47,7 @@ class Post extends React.Component {
       }
       this.props.createVote(voteData);
     } else {
-      return window.alert("Must be logged in to vote")
+      return window.alert("You must be logged in to vote")
     }
   }
 
