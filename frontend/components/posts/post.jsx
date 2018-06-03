@@ -103,6 +103,7 @@ class Post extends React.Component {
                   <div className="post-stuff">
                     <div className="post-icons">
                       <button className="upvote-button">
+                        
                       </button>
                       <button className="downvote-button">
                       </button>
@@ -127,6 +128,7 @@ class Post extends React.Component {
                             <span className="social-icon">
                             </span>
                           </a>
+
                           <a className="social-a icon-twt" href="https://twitter.com/" target="_blank">
                             <span className="social-icon">
                             </span>
