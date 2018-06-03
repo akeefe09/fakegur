@@ -38,12 +38,12 @@ class Post extends React.Component {
     return votesString;
   }
 
-  vote(value) {
+  vote(vote) {
     if (this.props.loggedIn) {
       let voteData = {
         votable_type: "Post",
         votable_id: this.props.postId,
-        value
+        vote
       }
       this.props.createVote(voteData);
     } else {
@@ -102,11 +102,13 @@ class Post extends React.Component {
                 <div className="post-footer">
                   <div className="post-stuff">
                     <div className="post-icons">
-                      <button className="upvote-button">
-                        
+
+                      <button onClick={() => this.vote(1)} className="upvote-button">
                       </button>
-                      <button className="downvote-button">
+
+                      <button onClick={() => this.vote(-1)} className="downvote-button">
                       </button>
+
                       <button className="favorite-button">
                       </button>
 

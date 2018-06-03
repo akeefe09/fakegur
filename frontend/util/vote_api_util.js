@@ -1,7 +1,7 @@
 export const createVote = vote => (
   $.ajax({
     method: 'POST',
-    url: `/api/${vote.votable_type}/${vote.votable_id}/votes/`,
+    url: `/api/${vote.votable_type.toLowerCase()}s/${vote.votable_id}/votes/`,
     data: vote
   })
 );
@@ -9,7 +9,7 @@ export const createVote = vote => (
 export const deleteVote = ({id}) => (
   $.ajax({
     method: 'DELETE',
-    url: `/api/${vote.votable_type}/${vote.votable_id}/votes/${vote.id}`
+    url: `/api/${vote.votable_type.toLowerCase()}/${vote.votable_id}/votes/${vote.id}`
   })
 );
 
