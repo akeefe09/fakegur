@@ -38,12 +38,12 @@ class Post extends React.Component {
     return votesString;
   }
 
-  vote(vote) {
+  vote(value) {
     if (this.props.loggedIn) {
       let voteData = {
         votable_type: "Post",
         votable_id: this.props.postId,
-        vote
+        value
       }
       this.props.createVote(voteData);
     } else {

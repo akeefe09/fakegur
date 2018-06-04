@@ -11,7 +11,10 @@ class Api::VotesController < ApplicationController
   end
 
   def create
-    @vote = Vote.new(vote_params)
+    @vote = Vote.new(
+      value: params[:value],
+      user_id: current_user.id,
+    )
     if (params[:comment_id])
       @vote.votable_type = "Comment"
       @vote.votable_id = params[:comment_id]
@@ -21,7 +24,7 @@ class Api::VotesController < ApplicationController
     end
 
     if @vote.save
-      render_post(vote)
+      render_post(@vote)
     else
       render json: @vote.errors.full_messages
     end
@@ -39,8 +42,8 @@ class Api::VotesController < ApplicationController
 
 
   private
-  def vote_params
-    params.require(:vote).permit(:id, :user_id, :vote_type)
-  end
+  # def vote_params
+  #   params.require(:vote).permit(:id, :user_id, :value, :votable_type, :votable_id)
+  # end
 
 end

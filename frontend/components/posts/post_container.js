@@ -11,7 +11,7 @@ const mapStateToProps = (state, ownProps) => {
   for (let key in state.entities.votes) {
     if (votes[key].votable_id === state.entities.posts[postId] &&
     votes[key].votable_type === "Post") {
-      totalVotes += votes[key].vote;
+      totalVotes += votes[key].value;
     }
   }
 
