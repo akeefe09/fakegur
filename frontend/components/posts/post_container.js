@@ -6,13 +6,18 @@ import { createVote } from '../../actions/vote_actions';
 
 const mapStateToProps = (state, ownProps) => {
   const postId = ownProps.match.params.id;
-  let totalVotes = 0;
+  let totalVotes = 1;
   let votes = state.entities.votes;
-  for (let key in state.entities.votes) {
-    if (votes[key].votable_id === state.entities.posts[postId] &&
-    votes[key].votable_type === "Post") {
-      totalVotes += votes[key].value;
+  for (let key in votes) {
+    console.log(postId);
+    if (votes[key].votable_id == postId && votes[key].votable_type === "Post") {
+      totalVotes += 1;
     }
+  }
+
+  let votedUsers = [];
+  for (let key in state.entities.votes) {
+    votedUsers.push(votes[key].user_id);
   }
 
   let author = {};
@@ -27,7 +32,8 @@ const mapStateToProps = (state, ownProps) => {
     post: state.entities.posts[postId],
     postId,
     totalVotes,
-    author
+    author,
+    votedUsers,
   });
 };
 

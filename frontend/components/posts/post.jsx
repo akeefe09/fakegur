@@ -24,36 +24,52 @@ class Post extends React.Component {
   }
 
   displayVotes() {
-    const votesCount = this.props.totalVotes;
-    let votesString;
-    if (votesCount !== 0) {
-      if (votesCount === 1 || votesCount === -1) {
-        votesString = (`${votesCount} vote`)
-      } else {
-        votesString = (`${votesCount} votes`)
-      }
+    let votesCount = this.props.totalVotes;
+    let votesString = "";
+    if (votesCount === 1) {
+      votesString = "1 vote";
     } else {
-      votesString = "0 Votes";
+      votesString = (`${votesCount} votes`)
     }
     return votesString;
   }
 
+  // vote(value) {
+  //   if (this.props.loggedIn) {
+  //     let voteData = {
+  //       votable_type: "Post",
+  //       votable_id: this.props.postId,
+  //       value
+  //     }
+  //     this.props.createVote(voteData);
+  //   } else {
+  //     return window.alert("You must be logged in to vote")
+  //   }
+  // }
+
   vote(value) {
-    if (this.props.loggedIn) {
+    if (!(this.props.loggedIn)) {
+      return window.alert("You must be logged in to vote");
+    } else if (this.props.votedUsers.indexOf(this.props.currentUser.id) !== -1) {
+      return window.alert("You have already voted on this post");
+    } else {
       let voteData = {
         votable_type: "Post",
         votable_id: this.props.postId,
         value
       }
       this.props.createVote(voteData);
-    } else {
-      return window.alert("You must be logged in to vote")
     }
   }
 
   handleDelete() {
     this.props.deletePost(this.props.post.id).then(() => this.setState({altText: 'Post not found'}));
   }
+
+  // <button onClick={() => this.vote(-1)} className="downvote-button">
+  // </button>
+
+  // <span className="stats-views">22 views</span>
 
   render() {
     const {post, currentUser} = this.props;
@@ -107,9 +123,6 @@ class Post extends React.Component {
                       <button onClick={() => this.vote(1)} className="upvote-button">
                       </button>
 
-                      <button onClick={() => this.vote(-1)} className="downvote-button">
-                      </button>
-
                       <button className="favorite-button">
                       </button>
 
@@ -152,7 +165,7 @@ class Post extends React.Component {
                       <div className="post-data-footer">
                         <span className="post-stats">
                           <span className="stats-points">{this.displayVotes()}</span>
-                          <span className="stats-views">22 views</span>
+
                         </span>
                       </div>
                     </div>
