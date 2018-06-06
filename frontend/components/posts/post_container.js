@@ -14,13 +14,19 @@ const mapStateToProps = (state, ownProps) => {
       totalVotes += votes[key].value;
     }
   }
+  let author = {};
 
+  if(state.entities.posts[postId]) {
+    author = state.entities.users[(state.entities.posts[postId].user_id)]
+  }
+  debugger
   return ({
     currentUser: state.session.currentUser,
     loggedIn: Boolean(state.session.currentUser),
     post: state.entities.posts[postId],
     postId,
     totalVotes,
+    author
   });
 };
 

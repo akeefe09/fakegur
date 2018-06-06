@@ -57,6 +57,7 @@ class Post extends React.Component {
 
   render() {
     const {post, currentUser} = this.props;
+    
     return (
       <div className="post-div">
         <div className="jeff">
@@ -74,7 +75,7 @@ class Post extends React.Component {
                     <div className="post-user">
                       <span className="by">by</span>
                       <Link to={`/users/${post.user_id}`}>
-                        {post.user_id}
+                        {this.props.author.username}
                       </Link>
                     </div>
                   </div>

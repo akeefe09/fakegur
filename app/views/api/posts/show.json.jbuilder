@@ -18,3 +18,9 @@ json.votes do
     end
   end
 end
+
+json.user do
+  json.set! @post.user_id do
+    json.partial! 'api/users/user', user: @post.user
+  end
+end
