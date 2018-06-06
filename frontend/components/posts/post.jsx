@@ -9,7 +9,7 @@ class Post extends React.Component {
   constructor() {
     super();
     this.state = {
-      altText: 'Loading...'
+      altText: 'Loading...',
     }
     this.handleDelete = this.handleDelete.bind(this);
     this.displayVotes = this.displayVotes.bind(this);
@@ -51,7 +51,7 @@ class Post extends React.Component {
     if (!(this.props.loggedIn)) {
       return window.alert("You must be logged in to vote");
     } else if (this.props.votedUsers.indexOf(this.props.currentUser.id) !== -1) {
-      return window.alert("You have already voted on this post");
+      return;
     } else {
       let voteData = {
         votable_type: "Post",

@@ -5,12 +5,11 @@ import Post from './post';
 import { createVote } from '../../actions/vote_actions';
 
 const mapStateToProps = (state, ownProps) => {
-  const postId = ownProps.match.params.id;
+  const postId = parseInt(ownProps.match.params.id);
   let totalVotes = 1;
   let votes = state.entities.votes;
   for (let key in votes) {
-    console.log(postId);
-    if (votes[key].votable_id == postId && votes[key].votable_type === "Post") {
+    if (votes[key].votable_id === postId && votes[key].votable_type === "Post") {
       totalVotes += 1;
     }
   }

@@ -23,6 +23,9 @@ class IndexPage extends React.Component {
       )
     });
 
+    // <FaClockO className="clock"/>
+    // <FaRandom className="shuffle"/>
+
     return (
       <div className="main-gallery-outside">
         <div className="top-sentence">
@@ -30,8 +33,7 @@ class IndexPage extends React.Component {
             The Most Viral Images on the Internet, sorted by popularity
           </span>
           <div className="sort-icons">
-            <FaClockO className="clock"/>
-            <FaRandom className="shuffle"/>
+
           </div>
           <div className="gallery-message">Today's most popular posts.</div>
         </div>
