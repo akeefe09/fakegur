@@ -57,7 +57,7 @@ class Post extends React.Component {
 
   render() {
     const {post, currentUser} = this.props;
-    
+
     return (
       <div className="post-div">
         <div className="jeff">
