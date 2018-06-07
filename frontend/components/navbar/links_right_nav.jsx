@@ -5,6 +5,10 @@ import { logout } from '../../actions/session_actions';
 import { openModal } from '../../actions/modal_actions';
 import FaCloudUpload from 'react-icons/lib/fa/cloud-upload';
 
+// <Link to={`/users/${user.id}`}
+//   className='navlink-btn'> {user.username}
+// </Link>
+
 const RightNav = ({ loggedIn, logout, user, openModal }) => {
   if (!loggedIn) {
     return (
@@ -35,8 +39,8 @@ const RightNav = ({ loggedIn, logout, user, openModal }) => {
         </li>
 
         <li className="navbar-link user-nav-name">
-          <Link to={`/users/${user.id}`}
-            className='navlink-btn'> {user.username} </Link>
+          <div className='navlink-btn'> {user.username}
+          </div>
         </li>
       </ul>
 

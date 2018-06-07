@@ -126,6 +126,26 @@
   background-size: 120%;
 }
 
+.upvote-button-voted {
+  transform: scale(1);
+  font-size: 28px;
+  margin-right: 30px;
+  background: 0 0;
+  border: none;
+  outline: 0;
+  color: #bbb;
+  padding: 0;
+  display: inline-block;
+  height: 45px;
+  width: 34px;
+  cursor: pointer;
+  box-sizing: border-box;
+  align-items: flex-start;
+  text-align: center;
+  background: url("https://i.imgur.com/YT4rdGP.png") center no-repeat;
+  background-size: 120%;
+}
+
 .downvote-button {
   transform: scale(1);
   font-size: 28px;

@@ -51,7 +51,7 @@ class Post extends React.Component {
     if (!(this.props.loggedIn)) {
       return window.alert("You must be logged in to vote");
     } else if (this.props.votedUsers.indexOf(this.props.currentUser.id) !== -1) {
-      return;
+      return window.alert("You have already voted on this post");
     } else {
       let voteData = {
         votable_type: "Post",
@@ -71,8 +71,18 @@ class Post extends React.Component {
 
   // <span className="stats-views">22 views</span>
 
+  // <Link to={`/users/${post.user_id}`}>
+  //   {this.props.author.username}
+  // </Link>
+
   render() {
-    const {post, currentUser} = this.props;
+    const { post, currentUser } = this.props;
+    let voteClass;
+    if (this.props.votedUsers.includes(this.props.currentUser.id)) {
+      voteClass = "upvote-button-voted";
+    } else {
+      voteClass = "upvote-button";
+    }
 
     return (
       <div className="post-div">
@@ -80,6 +90,7 @@ class Post extends React.Component {
         <header className='navbar-container'>
           <NavBar/>
         </header>
+
         { post ? (
         <div className="whole-container">
           <div className="post-container-main">
@@ -89,10 +100,8 @@ class Post extends React.Component {
                     <div className="post-title">{post.title}</div>
 
                     <div className="post-user">
-                      <span className="by">by</span>
-                      <Link to={`/users/${post.user_id}`}>
-                        {this.props.author.username}
-                      </Link>
+                      <span className="by">by {this.props.author.username}</span>
+
                     </div>
                   </div>
                 </div>
@@ -120,7 +129,7 @@ class Post extends React.Component {
                   <div className="post-stuff">
                     <div className="post-icons">
 
-                      <button onClick={() => this.vote(1)} className="upvote-button">
+                      <button onClick={() => this.vote(1)} className={ voteClass }>
                       </button>
 
                       <button className="favorite-button">
@@ -167,7 +176,7 @@ class Post extends React.Component {
                         <span className="post-stats">
                           <span className="stats-points">{this.displayVotes()}</span>
                         </span>
-                        
+
                       </div>
                     </div>
                 </div>

@@ -35,9 +35,11 @@ If a user is logged in, they will be able to submit comments which display benea
 
 Voting has not been fully implemented yet, but features a polymorphic association so that votes can be applied to either comments or posts.
 
+At present, users can upvote on posts. Removing upvotes or downvoting is not allowed because I want my site to be a wholesome, positive place.
+
 **Future Updates**
 
-Votes: votes have been partially implemented in the Rails backend but are not yet accessible in the fronted.
+Votes: comment voting needs to be implemented.
 
 Threaded comments: Imgur has a lively community and relies heavily on commenting, so improving the commenting features to enable nested comments would be a good next step.
 
