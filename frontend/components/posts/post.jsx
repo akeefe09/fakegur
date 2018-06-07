@@ -78,7 +78,7 @@ class Post extends React.Component {
   render() {
     const { post, currentUser } = this.props;
     let voteClass;
-    if (this.props.votedUsers.includes(this.props.currentUser.id)) {
+    if ((this.props.currentUser) && this.props.votedUsers.includes(this.props.currentUser.id)) {
       voteClass = "upvote-button-voted";
     } else {
       voteClass = "upvote-button";
