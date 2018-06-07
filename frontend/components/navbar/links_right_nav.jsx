@@ -34,12 +34,12 @@ const RightNav = ({ loggedIn, logout, user, openModal }) => {
           </span>
         </li>
 
-        <li className="navbar-link logout-l" onClick={ ()=> logout()}>
+        <li className="navbar-link logout-l" onClick={ () => logout() }>
           <Link to='/' className='navlink-btn'> Logout </Link>
         </li>
 
-        <li className="navbar-link user-nav-name">
-          <div className='navlink-btn'> {user.username}
+        <li className="user-nav-name">
+          <div className='navlink-btn nav-user'> {user.username}
           </div>
         </li>
       </ul>

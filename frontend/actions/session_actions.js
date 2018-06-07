@@ -17,10 +17,10 @@ export const removeErrors = () => {
   });
 };
 
-export const receiveCurrentUser = ( user ) => {
+export const receiveCurrentUser = (payload) => {
   return ({
     type: RECEIVE_CURRENT_USER,
-    user,
+    payload,
   });
 };
 

@@ -9,9 +9,11 @@ const userReducer = (state = {}, action) => {
     case RECEIVE_USERS:
       return merge({}, state, action.users);
     case RECEIVE_USER:
-    case RECEIVE_CURRENT_USER:
     case UPDATE_USER:
       return merge({}, state, { [action.user.id]: action.user });
+    case RECEIVE_CURRENT_USER:
+    // debugger
+      return merge({}, state, { [action.payload.user.id]: action.payload.user  })
     case RECEIVE_POST:
       return merge({}, state, action.user);
     default:
