@@ -163,10 +163,11 @@ class Post extends React.Component {
                         </div>
                       </div>
                       <div className="post-data-footer">
+
                         <span className="post-stats">
                           <span className="stats-points">{this.displayVotes()}</span>
-
                         </span>
+                        
                       </div>
                     </div>
                 </div>
